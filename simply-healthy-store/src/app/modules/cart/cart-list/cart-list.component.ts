@@ -10,6 +10,7 @@ export class CartListComponent implements OnInit {
   @Input() products;
   @Output() deleteProduct = new EventEmitter();
 
+  isAddButtonDisabled: boolean;
   displayedColumns = ['image', 'name', 'price', 'button-substract', 'count', 'button-add', 'total', 'delete'];
 
   constructor() { }

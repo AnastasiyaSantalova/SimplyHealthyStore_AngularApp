@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { PRODUCTS, CARTPRODUCTS, Product } from './mock-products';
+import { PRODUCTS, CARTPRODUCTS, Product } from '../../mock-products';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
