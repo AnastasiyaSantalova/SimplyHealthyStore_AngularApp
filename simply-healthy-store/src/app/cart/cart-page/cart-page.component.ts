@@ -1,15 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { ProductsService } from './src/app/products.service';
-import { Product } from './../src/app/mock-products';
+import { ProductsService } from '../../products.service';
 
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrls: ['./cart-page.component.scss']
+  styleUrls: ['./cart-page.component.scss'],
 })
 
 export class CartPageComponent implements OnInit {
-  public cartProducts: Array<Product>;
+  public cartProducts;
 
   constructor(private productService: ProductsService) { }
 

@@ -3,7 +3,7 @@ import { PRODUCTS, CARTPRODUCTS, Product } from './mock-products';
 import { Observable, of } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 
 export class ProductsService {
@@ -25,7 +25,7 @@ export class ProductsService {
 
   pushProductToCart(product: Product): Observable<Product[]> {
     let ifContains = false;
-    
+
     this.cartProducts.forEach(cartProduct => {
       if (cartProduct.id === product.id) {
         return ifContains = true;
@@ -41,13 +41,13 @@ export class ProductsService {
   deleteProductFromCart(id): Observable<Product[]> {
     this.products = this.products.map(product => {
       if (product.id === id) {
-        product.available_quantity += product.quantity_in_cart;
-        product.quantity_in_cart = 0;
+        product.availableQuantity += product.quantityInCart;
+        product.quantityInCart = 0;
       }
       return product;
     });
     this.cartProducts = this.cartProducts.filter(product => product.id !== id);
-    
+
     return of(this.cartProducts);
   }
 }

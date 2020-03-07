@@ -1,25 +1,24 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
-import { HighlightCardBorderDirective } from '../../../directives/highlight-card-border.directive';
 import { EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-product-card',
   templateUrl: './product-card.component.html',
-  styleUrls: ['./product-card.component.scss']
+  styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  private productCount: number = 0;
-  private isAddButtonDisabled: boolean = false;
-  private isAddToCartButtonDisabled: boolean = true;
-
   @Input() product;
   @Input() pageURL;
   @Output() pushProduct = new EventEmitter();
 
+  private productCount: number = 0;
+  private isAddButtonDisabled: boolean = false;
+  private isAddToCartButtonDisabled: boolean = true;
+
   constructor() { }
 
   ngOnInit() {}
-  
+
   substractProducts(quantity) {
     this.productCount = this.productCount - 1;
     if (this.productCount < quantity) {
@@ -29,7 +28,7 @@ export class ProductCardComponent implements OnInit {
 
   addProducts(quantity) {
     this.isAddToCartButtonDisabled = false;
-    
+
     this.productCount = this.productCount + 1;
     if (this.productCount === quantity) {
       this.isAddButtonDisabled = true;
@@ -37,16 +36,16 @@ export class ProductCardComponent implements OnInit {
   }
 
   addToCart() {
-    if(this.product.available_quantity) {
-      this.product.available_quantity -= this.productCount;
-      this.product.quantity_in_cart += this.productCount;
+    if (this.product.availableQuantity) {
+      this.product.availableQuantity -= this.productCount;
+      this.product.quantityInCart += this.productCount;
       this.productCount = 0;
     }
 
-    if(!this.product.available_quantity) {
+    if (!this.product.availableQuantity) {
       this.isAddToCartButtonDisabled = true;
     }
-    
+
     this.onPushProduct(this.product);
     this.isAddToCartButtonDisabled = true;
   }

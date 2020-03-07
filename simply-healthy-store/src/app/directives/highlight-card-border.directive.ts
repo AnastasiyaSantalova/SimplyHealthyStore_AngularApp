@@ -1,7 +1,7 @@
 import { Directive, ElementRef, Renderer2, HostListener } from '@angular/core';
 
 @Directive({
-  selector: '[appHighlightCardBorder]'
+  selector: '[appHighlightCardBorder]',
 })
 export class HighlightCardBorderDirective {
 

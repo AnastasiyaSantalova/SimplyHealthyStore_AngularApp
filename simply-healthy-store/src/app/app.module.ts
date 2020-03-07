@@ -32,6 +32,6 @@ import { HighlightCardBorderDirective } from './directives/highlight-card-border
     ProductModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }

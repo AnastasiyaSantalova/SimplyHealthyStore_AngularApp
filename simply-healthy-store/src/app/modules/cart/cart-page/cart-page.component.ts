@@ -5,7 +5,7 @@ import { Product } from 'src/app/mock-products';
 @Component({
   selector: 'app-cart-page',
   templateUrl: './cart-page.component.html',
-  styleUrls: ['./cart-page.component.scss']
+  styleUrls: ['./cart-page.component.scss'],
 })
 export class CartPageComponent implements OnInit {
   public cartProducts: Array<Product>;
@@ -18,13 +18,13 @@ export class CartPageComponent implements OnInit {
 
   getCartProducts(): void {
     this.productService.getCartProducts()
-        .subscribe(cartProducts => this.cartProducts = cartProducts);
+      .subscribe(cartProducts => this.cartProducts = cartProducts);
   }
 
   onDeleteProduct(product): void {
     this.productService.deleteProductFromCart(product.id)
-        .subscribe(cartProducts => {
-          this.cartProducts = [...cartProducts];
+      .subscribe(cartProducts => {
+        this.cartProducts = [...cartProducts];
       });
   }
 }

@@ -18,6 +18,6 @@ import { ProductsPageComponent } from './products-page/products-page.component';
     CommonModule,
     AppRoutingModule,
     NgmaterialModule,
-  ]
+  ],
 })
 export class ProductModule { }

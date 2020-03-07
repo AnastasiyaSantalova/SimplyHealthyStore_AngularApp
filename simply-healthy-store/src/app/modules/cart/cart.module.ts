@@ -16,6 +16,6 @@ import { CartListComponent } from './cart-list/cart-list.component';
     CommonModule,
     NgmaterialModule,
     AppRoutingModule,
-  ]
+  ],
 })
 export class CartModule { }
