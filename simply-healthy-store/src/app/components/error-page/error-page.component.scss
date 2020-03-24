@@ -1,3 +1,9 @@
 .error-message {
     text-align: center;
+
+    &__title {
+        font-size: 6em;
+        font-weight: 600;
+        line-height: 150%;
+    }
 }
