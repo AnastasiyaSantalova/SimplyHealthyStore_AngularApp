@@ -14,20 +14,26 @@
     </ng-container>
     <ng-container matColumnDef="button-substract">
       <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let product"> 
-        <button mat-button class="mr-2" (click)='substractProduct(product)'>-</button>
+      <td mat-cell *matCellDef="let product" class="button-substract"> 
+        <button mat-button 
+                (click)='substractProduct(product)'
+                [disabled]="product.quantityInCart === 1">
+          -
+        </button>
       </td>
     </ng-container>
     <ng-container matColumnDef="count">
-      <th mat-header-cell *matHeaderCellDef> COUNT </th>
-      <td mat-cell *matCellDef="let product"> {{product.quantityInCart}} </td>
+      <th mat-header-cell *matHeaderCellDef class="product-quantity"> COUNT </th>
+      <td mat-cell *matCellDef="let product" class="product-quantity"> {{product.quantityInCart}} </td>
     </ng-container>
     <ng-container matColumnDef="button-add">
       <th mat-header-cell *matHeaderCellDef>  </th>
       <td mat-cell *matCellDef="let product"> 
         <button mat-button class="mr-0" 
                 (click)='addProduct(product)'
-                [disabled]="isAddButtonDisabled">+</button>
+                [disabled]="!product.availableQuantity">
+          +
+        </button>
       </td>
     </ng-container>
     <ng-container matColumnDef="total">

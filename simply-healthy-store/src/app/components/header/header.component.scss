@@ -1,7 +1,9 @@
+@import './../../../styles/colors.scss';
+
 .header {
   height: 80px;
-  background-color: #3E2723;
-  color: #FFFFFF;
+  background-color: $dark-background-color;
+  color: $light-font-color;
 
   &__title {
     font-size: large;

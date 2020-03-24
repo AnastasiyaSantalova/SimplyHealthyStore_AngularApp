@@ -1,18 +1,11 @@
-export interface Product {
-  id: number;
-  name: string;
-  price: number;
-  availableQuantity: number;
-  description?: string;
-  img: string;
-  quantityInCart: number;
-}
+import { Product } from './domain/Product';
 
 export const PRODUCTS: Array<Product> = [
   {
     id: 1,
     name: 'Fresh salad',
     price: 100,
+    serving: '100g',
     availableQuantity: 10,
     description: '',
     img: 'fresh_salad.jpg',
@@ -22,6 +15,7 @@ export const PRODUCTS: Array<Product> = [
     id: 2,
     name: 'Carrot sticks',
     price: 80,
+    serving: '100g',
     availableQuantity: 19,
     description: '',
     img: 'carrot_sticks.jpg',
@@ -31,6 +25,7 @@ export const PRODUCTS: Array<Product> = [
     id: 3,
     name: 'Celery juice',
     price: 130,
+    serving: '500ml',
     availableQuantity: 20,
     description: '',
     img: 'celery_juice.jpg',
@@ -40,6 +35,7 @@ export const PRODUCTS: Array<Product> = [
     id: 4,
     name: 'Freshburger',
     price: 200,
+    serving: '250g',
     availableQuantity: 16,
     description: '',
     img: 'freshburger.jpg',
@@ -49,6 +45,7 @@ export const PRODUCTS: Array<Product> = [
     id: 5,
     name: 'Tomato chips',
     price: 150,
+    serving: '100g',
     availableQuantity: 9,
     description: '',
     img: 'tomato_chips.jpg',
@@ -58,6 +55,7 @@ export const PRODUCTS: Array<Product> = [
     id: 6,
     name: 'Royal Apples',
     price: 300,
+    serving: '1kg',
     availableQuantity: 29,
     description: '',
     img: 'royal_apples.jpg',
@@ -67,6 +65,7 @@ export const PRODUCTS: Array<Product> = [
     id: 7,
     name: 'Nuts mix',
     price: 500,
+    serving: '300g',
     availableQuantity: 23,
     description: '',
     img: 'nuts_mix.jpg',
@@ -76,6 +75,7 @@ export const PRODUCTS: Array<Product> = [
     id: 8,
     name: 'Dried seaweed',
     price: 330,
+    serving: '100g',
     availableQuantity: 11,
     description: '',
     img: 'dried_seaweed.jpg',
@@ -85,6 +85,7 @@ export const PRODUCTS: Array<Product> = [
     id: 9,
     name: 'Golden mango',
     price: 450,
+    serving: 'one',
     availableQuantity: 15,
     description: '',
     img: 'golden_mango.jpg',
@@ -94,6 +95,7 @@ export const PRODUCTS: Array<Product> = [
     id: 10,
     name: 'Spring roll',
     price: 260,
+    serving: '200g',
     availableQuantity: 7,
     description: '',
     img: 'spring_roll.jpg',

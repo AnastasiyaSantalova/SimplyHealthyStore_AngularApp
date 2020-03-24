@@ -1,11 +1,12 @@
+@import './../../../../styles/colors.scss';
+
 .product-card {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-width: 500px;
-  border: 2px solid #E8F5E9;
+  min-width: 450px;
+  max-width: 600px;
   margin: 10px;
-  color: #3E2723;
 
   &__description {
     display: flex;
@@ -13,20 +14,26 @@
     justify-content: space-between;
   }
 
+  &__content span {
+    font-size: 0.6em;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;
   }
 
-  &__price {
-    color: #1B5E20;
-    padding: 10px;
-    border-radius: 50%;
-    border: 2px solid #1B5E20;
+  &__add-button {
+    background-color: $light-background-color;
+    color: $light-font-color;
+  }
+
+  &:hover {
+    border: 1px solid $light-background-color;
   }
 }
 
 img {
-  width: 180px;
+  width: 170px;
   margin-left: 10px;
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
+import { Product } from 'src/app/domain/Product';
 
 @Component({
   selector: 'app-product-card',
@@ -7,50 +8,34 @@ import { EventEmitter } from '@angular/core';
   styleUrls: ['./product-card.component.scss'],
 })
 export class ProductCardComponent implements OnInit {
-  @Input() product;
-  @Input() pageURL;
-  @Output() pushProduct = new EventEmitter();
+  @Input() product: Product;
+  @Input() pageURL: string;
+  @Output() pushProduct: EventEmitter<Product> = new EventEmitter();
 
-  private productCount: number = 0;
-  private isAddButtonDisabled: boolean = false;
-  private isAddToCartButtonDisabled: boolean = true;
+  private productCount: number = 1;
 
   constructor() { }
 
   ngOnInit() {}
 
-  substractProducts(quantity) {
+  substractProducts(): void {
     this.productCount = this.productCount - 1;
-    if (this.productCount < quantity) {
-      this.isAddButtonDisabled = false;
-    }
   }
 
-  addProducts(quantity) {
-    this.isAddToCartButtonDisabled = false;
-
+  addProducts(): void {
     this.productCount = this.productCount + 1;
-    if (this.productCount === quantity) {
-      this.isAddButtonDisabled = true;
-    }
   }
 
-  addToCart() {
+  addToCart(): void {
     if (this.product.availableQuantity) {
       this.product.availableQuantity -= this.productCount;
       this.product.quantityInCart += this.productCount;
-      this.productCount = 0;
+      this.productCount = 1;
     }
-
-    if (!this.product.availableQuantity) {
-      this.isAddToCartButtonDisabled = true;
-    }
-
     this.onPushProduct(this.product);
-    this.isAddToCartButtonDisabled = true;
   }
 
-  onPushProduct(product) {
+  onPushProduct(product: Product): void {
     this.pushProduct.emit(product);
   }
 }

@@ -1,6 +1,8 @@
+@import './../../../styles/colors.scss';
+
 footer {
-  background-color: #3E2723;
-  color: #FFFFFF;
+  background-color: $dark-background-color;
+  color: $light-font-color;
   .footer-copyright {
       width: 100%;
   }

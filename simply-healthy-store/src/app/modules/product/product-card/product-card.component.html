@@ -2,33 +2,34 @@
   <mat-card-content class="product-card__description">
     <mat-card-header class="product-card__header">
       <mat-card-title>{{product.name | uppercase}}</mat-card-title>
-      <span class="product-card__price">
-        {{product.price}} RUB
-      </span>
     </mat-card-header>
-    <mat-card-content>
-      <p class="ml-3">
+    <mat-card-content class="product-card__content ml-3">
+      <p>
+        {{product.price}} RUB <span>/ {{product.serving}}</span>
+      </p>
+      <p>
         AVAILABLE: {{product.availableQuantity}}
       </p>
     </mat-card-content>
     <mat-card-actions>
       <button mat-button 
-              [disabled]="!productCount" 
-              (click)='substractProducts(product.availableQuantity)'
+              [disabled]="productCount === 1" 
+              (click)='substractProducts()'
               class="mr-2">
         -
       </button>
       <span>{{productCount}}</span>
       <button mat-button 
-              [disabled]="isAddButtonDisabled" 
-              (click)='addProducts(product.availableQuantity)'
+              [disabled]="!product.availableQuantity || product.availableQuantity === productCount" 
+              (click)='addProducts()'
               class="mr-0">
         +
       </button>
       <button mat-raised-button 
-              [disabled]="isAddToCartButtonDisabled" 
-              (click)='addToCart()'>
-        ADD TO CART
+              [disabled]="!product.availableQuantity" 
+              (click)='addToCart()'
+              class="product-card__add-button">
+        ADD
       </button>
     </mat-card-actions>
   </mat-card-content>

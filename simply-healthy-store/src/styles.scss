@@ -1,17 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import './styles/colors.scss';
+
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 html, body {
-    margin-bottom: 100px;
+  margin-bottom: 100px;
 }
 
 body { 
-    margin: 0; 
-    font-family: Roboto, "Helvetica Neue", sans-serif; 
-    background-color: #FFFFFB;
-    color: #3E2723;
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+  color: $dark-font-color;
+}
+
+button:focus {
+  outline: none;
 }

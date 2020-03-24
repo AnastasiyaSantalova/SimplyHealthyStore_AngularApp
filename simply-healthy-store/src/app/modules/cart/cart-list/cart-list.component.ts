@@ -21,17 +21,11 @@ export class CartListComponent implements OnInit {
   substractProduct(product) {
     product.quantityInCart -= 1;
     product.availableQuantity += 1;
-    if (!product.quantityInCart) {
-      this.onDeleteProduct(product);
-    }
   }
 
   addProduct(product) {
     product.quantityInCart += 1;
     product.availableQuantity -= 1;
-    if (!product.availableQuantity) {
-      this.isAddButtonDisabled = true;
-    }
   }
 
   onDeleteProduct(product) {
