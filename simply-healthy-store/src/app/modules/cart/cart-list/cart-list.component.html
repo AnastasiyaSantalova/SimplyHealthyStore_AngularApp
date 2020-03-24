@@ -1,4 +1,5 @@
 <div class="cart-list" *ngIf="products.length; else noProducts">
+  <p>{{someData}}</p>
   <table mat-table [dataSource]="products">
     <ng-container matColumnDef="image">
       <th mat-header-cell *matHeaderCellDef>  </th>

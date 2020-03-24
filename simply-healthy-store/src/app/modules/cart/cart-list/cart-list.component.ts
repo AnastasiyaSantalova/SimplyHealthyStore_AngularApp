@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, NgZone } from '@angular/core';
 
 @Component({
   selector: 'app-cart-list',
@@ -11,11 +11,22 @@ export class CartListComponent implements OnInit {
   @Output() deleteProduct = new EventEmitter();
 
   isAddButtonDisabled: boolean;
+  someData: string = 'First data';
   displayedColumns = ['image', 'name', 'price', 'button-substract', 'count', 'button-add', 'total', 'delete'];
 
-  constructor() { }
+  constructor(private ngZone: NgZone) { }
 
   ngOnInit() {
+    this.changeSomeData('Second data');
+    this.ngZone.runOutsideAngular(() => {
+      this.changeSomeData('Third data');
+    })
+  }
+  
+  changeSomeData(text) {
+    setTimeout(() => {
+      this.someData = text
+    }, 5000);
   }
 
   substractProduct(product) {
