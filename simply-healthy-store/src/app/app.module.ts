@@ -4,8 +4,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgmaterialModule } from './ngmaterial.module';
 import { CommonModule } from '@angular/common';
 import { AppRoutingModule } from './app-routing.module';
-import { CartModule } from './modules/cart/cart.module';
-import { ProductModule } from './modules/product/product.module';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -28,8 +26,6 @@ import { HighlightCardBorderDirective } from './directives/highlight-card-border
     AppRoutingModule,
     BrowserAnimationsModule,
     NgmaterialModule,
-    CartModule,
-    ProductModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

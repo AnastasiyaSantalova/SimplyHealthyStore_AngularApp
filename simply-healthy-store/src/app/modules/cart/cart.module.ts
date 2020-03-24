@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NgmaterialModule } from '../../ngmaterial.module';
-import { AppRoutingModule } from 'src/app/app-routing.module';
+
+import { CartRoutingModule } from './cart-routing.module';
 
 import { CartPageComponent } from './cart-page/cart-page.component';
 import { CartListComponent } from './cart-list/cart-list.component';
@@ -15,7 +16,7 @@ import { CartListComponent } from './cart-list/cart-list.component';
   imports: [
     CommonModule,
     NgmaterialModule,
-    AppRoutingModule,
+    CartRoutingModule,
   ],
 })
 export class CartModule { }
