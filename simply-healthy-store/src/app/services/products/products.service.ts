@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
-import { PRODUCTS, CARTPRODUCTS, Product } from '../../mock-products';
+import { PRODUCTS, CARTPRODUCTS } from '../../mock-products';
 import { Observable, of } from 'rxjs';
+import { Product } from 'src/app/domain/Product';
 
 @Injectable({
   providedIn: 'root',
