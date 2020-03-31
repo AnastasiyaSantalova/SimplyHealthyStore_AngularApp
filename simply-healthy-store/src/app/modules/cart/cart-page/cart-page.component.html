@@ -1,5 +1,5 @@
 <h1 class="cart-page__header">CART</h1>
-<app-cart-list 
-      [products]="cartProducts"
-      (deleteProduct)="onDeleteProduct($event)">
+<app-cart-list [products]="cartProducts"
+               (deleteProduct)="onDeleteProduct($event)">
 </app-cart-list>
+<!-- <app-order-form *ngIf="cartProducts.length"></app-order-form> -->

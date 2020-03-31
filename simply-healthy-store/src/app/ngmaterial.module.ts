@@ -8,6 +8,10 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatTableModule } from '@angular/material/table';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectModule } from '@angular/material/select';
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
 
 @NgModule({
   declarations: [],
@@ -21,6 +25,10 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatBadgeModule,
     MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatAutocompleteModule,
   ],
   exports: [
     MatButtonModule,
@@ -31,6 +39,10 @@ import { MatTableModule } from '@angular/material/table';
     MatListModule,
     MatBadgeModule,
     MatTableModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSelectModule,
+    MatAutocompleteModule,
   ],
 })
 export class NgmaterialModule { }
