@@ -18,14 +18,15 @@ export class ProductsPageComponent implements OnInit {
 
   ngOnInit() {
     this.getProducts();
-    this.getCartProducts();
   }
 
   getProducts(): void {
     this.productService.getProducts()
-      .subscribe(products => {
-        this.products = products;
-      });
+    .subscribe(products => {
+      this.products = products;
+      this.getCartProducts();
+      this.countAvailableQuantity();
+    });
   }
 
   getCartProducts(): void {
@@ -39,7 +40,19 @@ export class ProductsPageComponent implements OnInit {
     this.updateAvailableQuantity(product);
   }
 
-  private updateAvailableQuantity(product) {
+  private countAvailableQuantity(): void {
+    if (this.cartProducts.length) {
+      this.cartProducts.forEach(cartProduct => {
+        this.products.forEach(product => {
+          if (product.id === cartProduct.id) {
+            product.availableQuantity -= cartProduct.quantityInCart;
+          }
+        })
+      })
+    }
+  }
+
+  private updateAvailableQuantity(product): void {
     this.products.forEach(p => {
       if (p.id === product[0].id) {
         p.availableQuantity -= product[1];
