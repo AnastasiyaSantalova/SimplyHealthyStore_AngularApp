@@ -1,35 +1,39 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { ProductInCart } from 'src/app/domain/Product';
 
 @Component({
   selector: 'app-cart-list',
   templateUrl: './cart-list.component.html',
   styleUrls: ['./cart-list.component.scss'],
 })
-export class CartListComponent implements OnInit {
+export class CartListComponent {
 
-  @Input() products;
-  @Output() deleteProduct = new EventEmitter();
+  @Input() products: ProductInCart[] = [];
+  @Output() deleteProduct: EventEmitter<ProductInCart> = new EventEmitter();
+  @Output() substractProduct: EventEmitter<ProductInCart> = new EventEmitter();
+  @Output() addProduct: EventEmitter<ProductInCart> = new EventEmitter();
 
   isAddButtonDisabled: boolean;
-  displayedColumns = ['image', 'name', 'price', 'button-substract', 'count', 'button-add', 'total', 'delete'];
+  displayedColumns = [
+    'image',
+    'name',
+    'price',
+    'button-substract',
+    'count',
+    'button-add',
+    'total',
+    'delete'
+  ];
 
-  constructor() { }
-
-  ngOnInit() {
+  onSubstractProduct(product: ProductInCart): void {
+    this.substractProduct.emit(product);
   }
 
-  substractProduct(product) {
-    product.quantityInCart -= 1;
-    product.availableQuantity += 1;
+  onAddProduct(product: ProductInCart): void {
+    this.addProduct.emit(product);
   }
 
-  addProduct(product) {
-    product.quantityInCart += 1;
-    product.availableQuantity -= 1;
-  }
-
-  onDeleteProduct(product) {
+  onDeleteProduct(product: ProductInCart): void {
     this.deleteProduct.emit(product);
   }
-
 }

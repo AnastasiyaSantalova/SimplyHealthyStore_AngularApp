@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Product } from 'src/app/domain/Product';
 
 @Component({
   selector: 'app-product-list',
@@ -6,18 +7,11 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 
-export class ProductListComponent implements OnInit {
-  public pageURL: string;
+export class ProductListComponent {
+  @Input() products: Product[] = [];
+  @Output() pushProduct: EventEmitter<[Product, number]> = new EventEmitter();
 
-  @Input() products;
-  @Output() pushProduct = new EventEmitter();
-
-  constructor() { }
-
-  ngOnInit() {
-  }
-
-  onPushProduct(product): void {
+  onPushProduct(product: [Product, number]): void {
     this.pushProduct.emit(product);
   }
 }

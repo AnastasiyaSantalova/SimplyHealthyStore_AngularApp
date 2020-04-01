@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output } from '@angular/core';
+import { Component, Input, Output } from '@angular/core';
 import { EventEmitter } from '@angular/core';
 import { Product } from 'src/app/domain/Product';
 
@@ -7,35 +7,23 @@ import { Product } from 'src/app/domain/Product';
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.scss'],
 })
-export class ProductCardComponent implements OnInit {
+
+export class ProductCardComponent {
   @Input() product: Product;
-  @Input() pageURL: string;
-  @Output() pushProduct: EventEmitter<Product> = new EventEmitter();
+  @Output() pushProduct: EventEmitter<[Product, number]> = new EventEmitter();
 
-  private productCount: number = 1;
-
-  constructor() { }
-
-  ngOnInit() {}
+  productCount: number = 1;
 
   substractProducts(): void {
-    this.productCount = this.productCount - 1;
+    this.productCount--;
   }
 
   addProducts(): void {
-    this.productCount = this.productCount + 1;
+    this.productCount++;
   }
 
-  addToCart(): void {
-    if (this.product.availableQuantity) {
-      this.product.availableQuantity -= this.productCount;
-      this.product.quantityInCart += this.productCount;
-      this.productCount = 1;
-    }
-    this.onPushProduct(this.product);
-  }
-
-  onPushProduct(product: Product): void {
-    this.pushProduct.emit(product);
+  onPushProduct(): void {
+    this.pushProduct.emit([this.product, this.productCount]);
+    this.productCount = 1;
   }
 }

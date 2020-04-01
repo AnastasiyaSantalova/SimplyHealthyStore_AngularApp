@@ -14,9 +14,9 @@
     </ng-container>
     <ng-container matColumnDef="button-substract">
       <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let product" class="button-substract"> 
-        <button mat-button 
-                (click)='substractProduct(product)'
+      <td mat-cell *matCellDef="let product" class="button-substract">
+        <button mat-button
+                (click)='onSubstractProduct(product)'
                 [disabled]="product.quantityInCart === 1">
           -
         </button>
@@ -28,10 +28,10 @@
     </ng-container>
     <ng-container matColumnDef="button-add">
       <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let product"> 
-        <button mat-button class="mr-0" 
-                (click)='addProduct(product)'
-                [disabled]="!product.availableQuantity">
+      <td mat-cell *matCellDef="let product">
+        <button mat-button class="mr-0"
+                (click)="onAddProduct(product)"
+                [disabled]="product.quantityInCart === product.availableQuantity">
           +
         </button>
       </td>
@@ -43,7 +43,7 @@
     <ng-container matColumnDef="delete">
       <th mat-header-cell *matHeaderCellDef>  </th>
       <td mat-cell *matCellDef="let product">
-        <button mat-button color="warn" class="mr-0" 
+        <button mat-button color="warn" class="mr-0"
                 (click)='onDeleteProduct(product)'>x</button>
       </td>
     </ng-container>
@@ -54,7 +54,7 @@
 
 <ng-template #noProducts>
   <div class="no-products mt-5">
-    There are NO products in your cart... <br><br> 
+    There are NO products in your cart... <br><br>
     Please come back to the <a [routerLink]="['/products']">products page</a> and add something!
   </div>
 </ng-template>
