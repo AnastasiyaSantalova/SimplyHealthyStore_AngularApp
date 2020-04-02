@@ -1,5 +1,7 @@
 <h1 class="cart-page__header">CART</h1>
 <app-cart-list [products]="cartProducts"
-               (deleteProduct)="onDeleteProduct($event)">
+               (deleteProduct)="onDeleteProduct($event)"
+               (addProduct)="onAddProduct($event)"
+               (substractProduct)="onSubstractProduct($event)">
 </app-cart-list>
 <!-- <app-order-form *ngIf="cartProducts.length"></app-order-form> -->

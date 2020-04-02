@@ -1,6 +1,6 @@
 import { Product } from './domain/Product';
 
-export const PRODUCTS: Array<Product> = [
+export const PRODUCTS: Product[] = [
   {
     id: 1,
     name: 'Fresh salad',
@@ -9,7 +9,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 10,
     description: '',
     img: 'fresh_salad.jpg',
-    quantityInCart: 0,
   },
   {
     id: 2,
@@ -19,7 +18,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 19,
     description: '',
     img: 'carrot_sticks.jpg',
-    quantityInCart: 0,
   },
   {
     id: 3,
@@ -29,7 +27,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 20,
     description: '',
     img: 'celery_juice.jpg',
-    quantityInCart: 0,
   },
   {
     id: 4,
@@ -39,7 +36,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 16,
     description: '',
     img: 'freshburger.jpg',
-    quantityInCart: 0,
   },
   {
     id: 5,
@@ -49,7 +45,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 9,
     description: '',
     img: 'tomato_chips.jpg',
-    quantityInCart: 0,
   },
   {
     id: 6,
@@ -59,7 +54,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 29,
     description: '',
     img: 'royal_apples.jpg',
-    quantityInCart: 0,
   },
   {
     id: 7,
@@ -69,7 +63,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 23,
     description: '',
     img: 'nuts_mix.jpg',
-    quantityInCart: 0,
   },
   {
     id: 8,
@@ -79,7 +72,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 11,
     description: '',
     img: 'dried_seaweed.jpg',
-    quantityInCart: 0,
   },
   {
     id: 9,
@@ -89,7 +81,6 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 15,
     description: '',
     img: 'golden_mango.jpg',
-    quantityInCart: 0,
   },
   {
     id: 10,
@@ -99,8 +90,5 @@ export const PRODUCTS: Array<Product> = [
     availableQuantity: 7,
     description: '',
     img: 'spring_roll.jpg',
-    quantityInCart: 0,
   },
 ];
-
-export const CARTPRODUCTS: Array<Product> = [];

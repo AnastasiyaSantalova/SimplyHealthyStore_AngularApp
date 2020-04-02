@@ -1,10 +1,14 @@
 <mat-nav-list class="product-list" *ngIf="products.length; else noProducts">
-  <app-product-card 
+  <app-product-card
         *ngFor="let product of products"
         [product]="product"
-        [pageURL]="pageURL"
-        (pushProduct)="onPushProduct($event)">
+        (pushProduct)="onPushProduct($event)"
+  >
   </app-product-card>
 </mat-nav-list>
 
-<ng-template #noProducts>There are NO products here...</ng-template>
+<ng-template #noProducts>
+  <div class="no-products mt-5">
+    There are NO products here...
+  </div>
+</ng-template>

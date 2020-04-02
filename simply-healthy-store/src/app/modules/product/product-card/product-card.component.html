@@ -1,4 +1,4 @@
-<mat-card  *ngIf="product.id" class="product-card" appHighlightCardBorder>
+<mat-card  *ngIf="product" class="product-card" appHighlightCardBorder>
   <mat-card-content class="product-card__description">
     <mat-card-header class="product-card__header">
       <mat-card-title>{{product.name | uppercase}}</mat-card-title>
@@ -12,22 +12,22 @@
       </p>
     </mat-card-content>
     <mat-card-actions>
-      <button mat-button 
-              [disabled]="productCount === 1" 
+      <button mat-button
+              [disabled]="productCount === 1"
               (click)='substractProducts()'
               class="mr-2">
         -
       </button>
       <span>{{productCount}}</span>
-      <button mat-button 
-              [disabled]="!product.availableQuantity || product.availableQuantity === productCount" 
+      <button mat-button
+              [disabled]="!product.availableQuantity || product.availableQuantity === productCount"
               (click)='addProducts()'
               class="mr-0">
         +
       </button>
-      <button mat-raised-button 
-              [disabled]="!product.availableQuantity" 
-              (click)='addToCart()'
+      <button mat-raised-button
+              [disabled]="!product.availableQuantity"
+              (click)='onPushProduct()'
               class="product-card__add-button">
         ADD
       </button>
