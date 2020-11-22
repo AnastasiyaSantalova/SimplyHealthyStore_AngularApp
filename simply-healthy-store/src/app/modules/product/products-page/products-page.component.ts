@@ -16,7 +16,7 @@ export class ProductsPageComponent implements OnInit {
   constructor(private productService: ProductsService,
               private sharedService: SharedService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProducts();
     this.getCartProducts();
   }
@@ -39,11 +39,11 @@ export class ProductsPageComponent implements OnInit {
     this.updateAvailableQuantity(product);
   }
 
-  private updateAvailableQuantity(product) {
+  private updateAvailableQuantity(product): void {
     this.products.forEach(p => {
       if (p.id === product[0].id) {
         p.availableQuantity -= product[1];
       }
-    })
+    });
   }
 }

@@ -7,11 +7,11 @@ export class HighlightCardBorderDirective {
 
   constructor(private el: ElementRef, private renderer: Renderer2) { }
 
-  @HostListener('mouseenter') onMouseEnter() {
+  @HostListener('mouseenter') onMouseEnter(): void {
     this.highlight('#2E7D32');
   }
 
-  @HostListener('mouseleave') onMouseLeave() {
+  @HostListener('mouseleave') onMouseLeave(): void {
     this.highlight('#E8F5E9');
   }
 

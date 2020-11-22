@@ -9,11 +9,11 @@ import { Product } from 'src/app/domain/Product';
 
 export class ProductsService {
 
-  products = [...PRODUCTS];
+  products: Product[] = [...PRODUCTS];
 
   constructor() { }
 
-  ngOnInit() { }
+  ngOnInit(): void { }
 
   getProducts(): Observable<Product[]> {
     return of(this.products);

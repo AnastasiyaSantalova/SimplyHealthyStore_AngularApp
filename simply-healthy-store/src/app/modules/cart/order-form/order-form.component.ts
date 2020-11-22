@@ -1,10 +1,10 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, AbstractControl } from '@angular/forms';
 
 @Component({
   selector: 'app-order-form',
   templateUrl: './order-form.component.html',
-  styleUrls: ['./order-form.component.scss']
+  styleUrls: ['./order-form.component.scss'],
 })
 export class OrderFormComponent implements OnInit {
   @Input() cartProducts;
@@ -17,13 +17,13 @@ export class OrderFormComponent implements OnInit {
     this.createForm();
   }
 
-  createForm() {
+  createForm(): void {
     this.orderForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
+      firstName: [''],
       lastName: '',
-      phone: ['', Validators.required],
-      address: ['', Validators.required],
-    })
+      phone: [''],
+      address: [''],
+    });
   }
 
   get firstName(): AbstractControl {
@@ -42,7 +42,7 @@ export class OrderFormComponent implements OnInit {
     return this.orderForm.get('address');
   }
 
-  onSubmit() {
+  onSubmit(): void {
   }
 
 }

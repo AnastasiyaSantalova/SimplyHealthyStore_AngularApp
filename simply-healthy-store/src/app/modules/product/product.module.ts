@@ -8,7 +8,6 @@ import { ProductsPageComponent } from './products-page/products-page.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCardComponent } from './product-card/product-card.component';
 
-
 @NgModule({
   declarations: [
     ProductsPageComponent,
@@ -18,7 +17,7 @@ import { ProductCardComponent } from './product-card/product-card.component';
   imports: [
     CommonModule,
     NgmaterialModule,
-    ProductRoutingModule
-  ]
+    ProductRoutingModule,
+  ],
 })
 export class ProductModule { }

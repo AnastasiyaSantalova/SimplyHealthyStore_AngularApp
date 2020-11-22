@@ -1,4 +1,4 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { SharedService } from 'src/app/services/shared/shared.service';
 import { ProductsService } from 'src/app/services/products/products.service';
@@ -16,7 +16,7 @@ export class CartPageComponent implements OnInit {
   constructor(private sharedService: SharedService,
               private productService: ProductsService) { }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getProducts();
     this.getCartProducts();
   }
@@ -35,12 +35,12 @@ export class CartPageComponent implements OnInit {
   }
 
   onSubstractProduct(product: ProductInCart): void {
-    this.updateQuantityInCart(product, -1)
+    this.updateQuantityInCart(product, -1);
     this.updateAvailableQuantity(product, 1);
   }
 
   onAddProduct(product: ProductInCart): void {
-    this.updateQuantityInCart(product, 1)
+    this.updateQuantityInCart(product, 1);
     this.updateAvailableQuantity(product, -1);
   }
 
@@ -49,19 +49,19 @@ export class CartPageComponent implements OnInit {
     this.updateAvailableQuantity(product, product.quantityInCart);
   }
 
-  private updateQuantityInCart(product, count) {
+  private updateQuantityInCart(product, count): void {
     this.cartProducts.forEach(p => {
       if (p.id === product.id) {
         p.quantityInCart += count;
       }
-    })
+    });
   }
 
-  private updateAvailableQuantity(product, count) {
+  private updateAvailableQuantity(product, count): void {
     this.products.forEach(p => {
       if (p.id === product.id) {
         p.availableQuantity += count;
       }
-    })
+    });
   }
 }

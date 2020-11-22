@@ -14,7 +14,7 @@ export class CartListComponent {
   @Output() addProduct: EventEmitter<ProductInCart> = new EventEmitter();
 
   isAddButtonDisabled: boolean;
-  displayedColumns = [
+  displayedColumns: string[] = [
     'image',
     'name',
     'price',
@@ -22,7 +22,7 @@ export class CartListComponent {
     'count',
     'button-add',
     'total',
-    'delete'
+    'delete',
   ];
 
   onSubstractProduct(product: ProductInCart): void {

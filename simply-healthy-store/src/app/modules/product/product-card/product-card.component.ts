@@ -12,7 +12,7 @@ export class ProductCardComponent {
   @Input() product: Product;
   @Output() pushProduct: EventEmitter<[Product, number]> = new EventEmitter();
 
-  productCount: number = 1;
+  productCount = 1;
 
   substractProducts(): void {
     this.productCount--;

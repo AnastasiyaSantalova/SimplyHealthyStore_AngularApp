@@ -102,9 +102,9 @@ module.exports = {
             "undefined"
         ],
         "id-match": "error",
-        "import/no-deprecated": "warn",
+        "import/no-deprecated": "off",
         "import/order": "off",
-        "jsdoc/no-types": "error",
+        "jsdoc/no-types": "off",
         "max-classes-per-file": "off",
         "max-len": [
             "error",
@@ -171,7 +171,7 @@ module.exports = {
             "error",
             "never"
         ],
-        "prefer-arrow/prefer-arrow-functions": "error",
+        "prefer-arrow/prefer-arrow-functions": "off",
         "quote-props": [
             "error",
             "as-needed"
